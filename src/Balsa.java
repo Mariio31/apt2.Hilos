@@ -1,15 +1,25 @@
 public class Balsa {
 
+    private String nombre;
     private int capacidad;
-    private int tiempo;
+    private int tiempoMs;
 
-    public Balsa(int capacidad, int tiempo) {
+    public Balsa(String nombre, int capacidad, int tiempoMs) {
+        this.nombre = nombre;
         this.capacidad = capacidad;
-        this.tiempo = tiempo;
+        this.tiempoMs = tiempoMs;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public int getCapacidad() {
         return capacidad;
+    }
+
+    public int getTiempoMs() {
+        return tiempoMs;
     }
 
 }

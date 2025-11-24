@@ -13,4 +13,23 @@ public class Barco {
         return !pasajeros.isEmpty();
     }
 
+    public synchronized Pasajero obtenerPasajero() {
+        if (pasajeros.isEmpty()) {
+            return null;
+        }
+
+        Pasajero seleccionado = pasajeros.get(0);
+        for (Pasajero p : pasajeros) {
+            if (p.getPrioridad() < seleccionado.getPrioridad()) {
+                seleccionado = p;
+            }
+        }
+        pasajeros.remove(seleccionado);
+        return seleccionado;
+    }
+
+    public synchronized int getPasajerosRestantes() {
+        return pasajeros.size();
+    }
+
 }
